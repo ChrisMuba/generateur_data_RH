@@ -83,7 +83,7 @@ st.title("🤖 Générateur de data RH")
 
 st.markdown("")
 
-st.markdown("Chosissez le nombre de salariés à générer à l'aide du curseur ⤵️")
+st.markdown("Chosissez le nombre de salariés à générer à l'aide du curseur (entre 1 et 1000 salariés) ⤵️")
 
 st.markdown("")
 
