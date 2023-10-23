@@ -5,8 +5,8 @@ st.set_page_config(
     page_icon="🏠",
 )
 
-st.write("# Bienvenu dans le Générateur")
-st.write("# de data RH! 👋🏿")
+st.write("# Générateur de data RH")
+st.write("# Bienvenu ! 👋🏿")
 
 st.sidebar.success("Select a demo above.")
 
