@@ -81,6 +81,8 @@ def generate_row(id):
 # set the title of the app
 st.title("🤖 Générateur de data RH")
 
+st.markdown("Chosissez le nombre de salariés à générer à l'aide du curseur")
+
 # create a slider for the number of rows to generate
 num_rows = st.slider("Nombre de salariés", min_value=1, max_value=1000, value=1)
 
