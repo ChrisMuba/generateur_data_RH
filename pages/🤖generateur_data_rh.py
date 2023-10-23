@@ -90,7 +90,7 @@ st.markdown("")
 # create a slider for the number of rows to generate
 num_rows = st.slider("Nombre de salariés", min_value=1, max_value=1000, value=1)
 
-st.markdown("Cliquez sur :red[**Générer**] ⤵️")
+st.markdown("Cliquez sur **Générer** ⤵️")
 
 # create a button to generate the data
 if st.button("Générer"):
