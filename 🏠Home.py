@@ -22,7 +22,7 @@ st.markdown(
     Le générateur de données RH est une application gratuite spécialement conçue pour les projets d'études de données 
     en **contrôle de gestion sociale, GPEC / GEPP et autres analyses** de données RH.  
     **👈🏿 Sélectionnez un item dans la barre latérale** pour voir quelques exemples
-    de ce que le générateur de data RH peut faire !
+    de ce que le générateur de data RH peut produire !
     ### Vous voulez en savoir plus ?
     - Check out [streamlit.io](https://streamlit.io)
     - Jump into our [documentation](https://docs.streamlit.io)
