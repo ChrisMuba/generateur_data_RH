@@ -7,6 +7,8 @@ st.set_page_config(
 
 st.write("# 🤖 Générateur de data RH")
 
+st.markdown("")
+
 st.markdown(
     """ 
     ### Bienvenu ! 👋🏿
