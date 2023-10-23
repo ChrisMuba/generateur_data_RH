@@ -98,6 +98,8 @@ if st.button("Générer"):
     # display the first 20 rows of the DataFrame
     st.dataframe(data.head(20))
 
+    st.markdown("Cliquez sur *Générer* ⤵️")
+    
     # create a download link for the data in CSV format
     csv = data.to_csv(index=False)
     b64 = base64.b64encode(csv.encode()).decode()
