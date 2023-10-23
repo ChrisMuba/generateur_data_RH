@@ -90,6 +90,8 @@ st.markdown("")
 # create a slider for the number of rows to generate
 num_rows = st.slider("Nombre de salariés", min_value=1, max_value=1000, value=1)
 
+st.markdown("Cliquez sur *Générer* ⤵️")
+
 # create a button to generate the data
 if st.button("Générer"):
     # generate the data and convert it to a DataFrame
@@ -97,8 +99,6 @@ if st.button("Générer"):
 
     # display the first 20 rows of the DataFrame
     st.dataframe(data.head(20))
-
-    st.markdown("Cliquez sur *Générer* ⤵️")
     
     # create a download link for the data in CSV format
     csv = data.to_csv(index=False)
