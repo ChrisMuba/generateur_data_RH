@@ -19,11 +19,11 @@ st.sidebar.success("Select a demo above.")
 
 st.markdown(
     """
-    Streamlit is an open-source app framework built specifically for
-    Machine Learning and Data Science projects.
-    **👈 Select a demo from the sidebar** to see some examples
-    of what Streamlit can do!
-    ### Want to learn more?
+    Le générateur de données RH est une application gratuite spécialement conçue pour les projets d'études de données 
+    en contrôle de gestion sociale, GPEC / GEPP et autres analyses de données RH.  
+    **👈🏿 Sélectionnez un item dans la barre latérale pour voir quelques exemples
+    de ce que le générateur de data RH peut faire !
+    ### Vous voulez en savoir plus ?
     - Check out [streamlit.io](https://streamlit.io)
     - Jump into our [documentation](https://docs.streamlit.io)
     - Ask a question in our [community
