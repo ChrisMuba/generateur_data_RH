@@ -8,12 +8,12 @@ from random import randint, uniform
 fake = Faker()
 
 # Department job titles
-departments = ["HR", "Sales", "Marketing", "IT", "Finance"]
+departments = ["RH", "Ventes", "Marketing", "IT", "Finance"]
 
 # Generate a single row of data
 def generate_row(emp_id):
     department = fake.random_element(elements=departments)
-    gender = fake.random_element(elements=("Male", "Female"))
+    gender = fake.random_element(elements=("Homme", "Femme"))
     gross_monthly_salary = randint(1917, 5417)
     avg_employer_contributions = round(gross_monthly_salary * 0.33, 2)
     monthly_cost = round(gross_monthly_salary + avg_employer_contributions, 2)
@@ -22,15 +22,15 @@ def generate_row(emp_id):
     
     return {
         "ID": emp_id,
-        "Last Name": fake.last_name(),
-        "First Name": fake.first_name(),
-        "Gender": gender,
-        "Department": department,
-        "Gross Monthly Salary (€)": gross_monthly_salary,
-        "Average Employer Contributions (€)": avg_employer_contributions,
-        "Monthly Cost (€)": monthly_cost,
-        "Number of Months of Presence": num_months_presence,
-        "Annual Cost (€)": annual_cost
+        "Nom": fake.last_name(),
+        "Prénom": fake.first_name(),
+        "Genre": gender,
+        "Service": department,
+        "Salaire mensuel brut (€)": gross_monthly_salary,
+        "Charges patronales moyenne (€)": avg_employer_contributions,
+        "Coût mensuel (€)": monthly_cost,
+        "Nombre de mois de présence": num_months_presence,
+        "Coût annuel (€)": annual_cost
     }
 
 # Generate fake HR data
@@ -47,8 +47,8 @@ def main():
     
     if st.button("Generate HR Data"):
         df = generate_hr_data(num_entries)
-        df["Monthly Cost (€)"] = df["Monthly Cost (€)"].map("{:.2f}".format)
-        df["Annual Cost (€)"] = df["Annual Cost (€)"].map("{:.2f}".format)
+        df["Coût mensuel (€)"] = df["Coût mensuel (€)"].map("{:.2f}".format)
+        df["Coût annuel (€)"] = df["Coût annuel (€)"].map("{:.2f}".format)
         st.dataframe(df.head(50))
         
         # Export data as CSV
