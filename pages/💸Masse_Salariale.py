@@ -21,7 +21,7 @@ def generate_row(emp_id):
     annual_cost = round(monthly_cost * num_months_presence, 2)
     
     return {
-        "ID": emp_id,
+        "Matricule": emp_id,
         "Nom": fake.last_name(),
         "Prénom": fake.first_name(),
         "Genre": gender,
