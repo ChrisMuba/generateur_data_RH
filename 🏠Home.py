@@ -36,7 +36,7 @@ st.markdown(
 )
 
 with st.sidebar:
-    st.image('GIF/GIF_loading_data.gif')
+    st.image('gif/Robot_Emoji.gif')
 
 
 st.markdown("")
