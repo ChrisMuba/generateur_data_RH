@@ -13,13 +13,13 @@ fake = Faker()
 
 # Define the job titles for each department
 job_titles = {
-    "HR": ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale',
+    "RH": ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale',
            'Responsable SIRH', 'Responsable GPEC GEPP'),
-    "Sales": ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires',
+    "Ventes": ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires',
               'Gestionnaire CRM', 'Responsable commercial'),
     "Marketing": ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
                   'Responsable marketing', 'Ingénieur packaging'),
-    "IT": ('Administrateur système', 'Administrateur réseaux',
+    "Informatique": ('Administrateur système', 'Administrateur réseaux',
            'Responsable sécurité informatique', 'Webmaster', 'Data engineer'),
     "Finance": ('Assistant de gestion', 'Analyste financier', 'Auditeur interne',
                 'Comptable', 'Contrôleur de gestion')
@@ -39,19 +39,19 @@ def generate_row_for_year(id, year):
     
     reason_for_departure = fake.random_element(elements=("Layoff", "Resignation", "Termination", "Retirement"))
     
-    department = fake.random_element(elements=("HR", "Sales", "Marketing", "IT", "Finance"))
+    department = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
     job_title = fake.random_element(elements=job_titles[department])
     
     return {
-        "ID": id,
-        "Last Name": fake.last_name(),
-        "First Name": fake.first_name(),
-        "Gender": fake.random_element(elements=("Male", "Female")),
-        "Recruitment Date": recruitment_date.strftime('%d/%m/%Y'),
-        "Date of Leaving": leaving_date.strftime('%d/%m/%Y'),
-        "Reason for Departure": reason_for_departure,
-        "Department": department,
-        "Job Title": job_title
+        "Matricule": id,
+        "Nom": fake.last_name(),
+        "Prénom": fake.first_name(),
+        "Genre": fake.random_element(elements=("Homme", "Femme")),
+        "Date de recrutement": recruitment_date.strftime('%d/%m/%Y'),
+        "Date de départ": leaving_date.strftime('%d/%m/%Y'),
+        "Raison du départ": reason_for_departure,
+        "Service": department,
+        "Poste occupé": job_title
     }
 
 # Function to generate the fake HR data for a specific year
