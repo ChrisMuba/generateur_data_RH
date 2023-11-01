@@ -37,7 +37,7 @@ def generate_row_for_year(id, year):
     recruitment_date = random_date(start_date, end_date)
     leaving_date = random_date(recruitment_date, end_date)
     
-    reason_for_departure = fake.random_element(elements=(""Mise à pied", "Démission", "Résiliation", "Retraite"))
+    reason_for_departure = fake.random_element(elements=("Mise à pied", "Démission", "Résiliation", "Retraite"))
     
     department = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
     job_title = fake.random_element(elements=job_titles[department])
