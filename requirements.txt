@@ -1,3 +1,4 @@
 faker
 genderize
 io
+xlsxwriter
