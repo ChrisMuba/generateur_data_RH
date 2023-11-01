@@ -13,8 +13,6 @@ fake = Faker()
 # Department job titles
 departments = ["HR", "Sales", "Marketing", "IT", "Finance"]
 
-st.cache_data.clear()
-
 # Generate a single row of data
 def generate_row(emp_id):
     first_name = fake.first_name()
