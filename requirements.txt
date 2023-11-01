@@ -1,4 +1,3 @@
 faker
 genderize
-io
 xlsxwriter
