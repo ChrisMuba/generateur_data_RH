@@ -53,7 +53,7 @@ def generate_hr_data(num_entries):
 def main():
     st.title("Fake HR Data Generator")
     
-    num_entries = st.number_input("Enter the number of data entries to generate (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
+    num_entries = st.number_input("Enter the number of data entries to generate (max 100)", min_value=1, max_value=1000, value=20, step=1, format="%d")
     
     if st.button("Generate HR Data"):
         df = generate_hr_data(num_entries)
