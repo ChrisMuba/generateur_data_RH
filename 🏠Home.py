@@ -34,3 +34,20 @@ st.markdown(
     - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
 """
 )
+
+with st.sidebar:
+    st.image('GIF/GIF_loading_data.gif')
+
+
+st.markdown("")
+
+
+st.markdown("")
+
+
+# Add the "made with ❤️ by ..." text in the sidebar
+with st.sidebar:
+    st.write("Made with ❤️ by Chris MUBA")
+
+
+st.markdown("")
