@@ -53,16 +53,6 @@ def main():
         b64 = base64.b64encode(csv.encode()).decode()
         href = f'<a href="data:file/csv;base64,{b64}" download="hr_data.csv">Download CSV File</a>'
         st.markdown(href, unsafe_allow_html=True)
-        
-        # Export data as Excel
-        excel_file = io.BytesIO()
-        with pd.ExcelWriter(excel_file, engine='xlsxwriter') as writer:
-            df.to_excel(writer, index=False, sheet_name='Sheet1')
-        excel_file.seek(0)
-        b64 = base64.b64encode(excel_file.read()).decode()
-        href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="hr_data.xlsx">Download Excel File</a>'
-        st.markdown(href, unsafe_allow_html=True)
-
 
 # Run the app
 if __name__ == "__main__":
