@@ -1,9 +1,11 @@
+
+
 import streamlit as st
 import pandas as pd
 import base64
 from faker import Faker
 from random import randint, uniform
-from gender_guesser import get_gender
+from genderize import Genderize
 
 # Instantiate a faker object
 fake = Faker()
@@ -14,7 +16,10 @@ departments = ["HR", "Sales", "Marketing", "IT", "Finance"]
 # Generate a single row of data
 def generate_row(emp_id):
     first_name = fake.first_name()
-    gender = get_gender(first_name.split()[0])
+    gender = "Unknown"
+    genderize_data = Genderize().get([first_name])
+    if len(genderize_data) > 0:
+        gender = genderize_data[0]["gender"]
     if gender == "unknown":
         gender = fake.random_element(elements=("Male", "Female"))
     last_name = fake.last_name()
