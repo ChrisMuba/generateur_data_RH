@@ -3,6 +3,7 @@ import pandas as pd
 import base64
 from faker import Faker
 from random import choice
+import io
 
 # Instantiate a faker object
 fake = Faker()
@@ -54,8 +55,11 @@ def main():
         st.markdown(href, unsafe_allow_html=True)
         
         # Export data as Excel
-        excel = df.to_excel(index=False)
-        b64 = base64.b64encode(excel).decode()
+        excel_file = io.BytesIO()
+        with pd.ExcelWriter(excel_file, engine='xlsxwriter') as writer:
+            df.to_excel(writer, index=False, sheet_name='Sheet1')
+        excel_file.seek(0)
+        b64 = base64.b64encode(excel_file.read()).decode()
         href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="hr_data.xlsx">Download Excel File</a>'
         st.markdown(href, unsafe_allow_html=True)
 
