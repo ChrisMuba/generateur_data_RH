@@ -19,14 +19,14 @@ def generate_row(emp_id):
     fte_worked = round(fte * num_months_presence / 12, 2)
 
     return {
-        "ID": emp_id,
-        "Last Name": last_name,
-        "First Name": first_name,
-        "Number of Hours per Week": num_hours_per_week,
-        "Number of Paid Hours per Month": num_paid_hours_per_month,
-        "Full-time Equivalent (FTE)": fte,
-        "Number of Months of Presence": num_months_presence,
-        "Full-time Equivalent Worked": fte_worked,
+        "Matricule": emp_id,
+        "Nom": last_name,
+        "Prénom": first_name,
+        "Nombre d'heures par semaine": num_hours_per_week,
+        "Nombre d'heures rémunérées par mois": num_paid_hours_per_month,
+        "Equivalent temps plein": fte,
+        "Nombre de mois de présence": num_months_presence,
+        "Equivalent temps plein travaillé": fte_worked,
     }
 
 # Generate fake HR data
@@ -37,15 +37,15 @@ def generate_hr_data(num_entries):
 
 # Streamlit app
 def main():
-    st.title("Generateur Équivalent temps plein")
+    st.title("Générateur Équivalent temps plein")
 
     num_entries = st.number_input("Enter the number of data entries to generate (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
 
     if st.button("Generate HR Data"):
         df = generate_hr_data(num_entries)
-        df["Number of Paid Hours per Month"] = df["Number of Paid Hours per Month"].map("{:.2f}".format)
-        df["Full-time Equivalent (FTE)"] = df["Full-time Equivalent (FTE)"].map("{:.2f}".format)
-        df["Full-time Equivalent Worked"] = df["Full-time Equivalent Worked"].map("{:.2f}".format)
+        df["Nombre d'heures rémunérées par mois"] = df["Nombre d'heures rémunérées par mois"].map("{:.2f}".format)
+        df["Equivalent temps plein"] = df["Equivalent temps plein"].map("{:.2f}".format)
+        df["Equivalent temps plein travaillé"] = df["Equivalent temps plein travaillé"].map("{:.2f}".format)
         st.dataframe(df.head(50))
 
         # Export data as CSV
