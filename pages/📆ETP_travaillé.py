@@ -41,7 +41,7 @@ def main():
 
     num_entries = st.number_input("Entrez le nombre de données à générer (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
 
-    if st.button("Générer les data RH"):
+    if st.button("Générer les données"):
         df = generate_hr_data(num_entries)
         df["Nombre d'heures rémunérées par mois"] = df["Nombre d'heures rémunérées par mois"].map("{:.2f}".format)
         df["Equivalent temps plein"] = df["Equivalent temps plein"].map("{:.2f}".format)
