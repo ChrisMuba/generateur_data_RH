@@ -51,7 +51,7 @@ def main():
         # Export data as CSV
         csv = df.to_csv(index=False)
         b64 = base64.b64encode(csv.encode()).decode()
-        href = f'<a href="data:file/csv;base64,{b64}" download="hr_data.csv">Download CSV File</a>'
+        href = f'<a href="data:file/csv;base64,{b64}" download="hr_data.csv">Télécharger le fichier CSV</a>'
         st.markdown(href, unsafe_allow_html=True)
 
 # Run the app
