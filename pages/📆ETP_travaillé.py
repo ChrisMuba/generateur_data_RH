@@ -37,11 +37,11 @@ def generate_hr_data(num_entries):
 
 # Streamlit app
 def main():
-    st.title("Générateur Équivalent temps plein")
+    st.title("Générateur ETP & ETP travaillé")
 
-    num_entries = st.number_input("Enter the number of data entries to generate (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
+    num_entries = st.number_input("Entrez le nombre de données à générer (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
 
-    if st.button("Generate HR Data"):
+    if st.button("Générer les data RH"):
         df = generate_hr_data(num_entries)
         df["Nombre d'heures rémunérées par mois"] = df["Nombre d'heures rémunérées par mois"].map("{:.2f}".format)
         df["Equivalent temps plein"] = df["Equivalent temps plein"].map("{:.2f}".format)
