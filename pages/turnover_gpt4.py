@@ -5,6 +5,7 @@ from faker import Faker
 from random import randint
 from datetime import datetime, timedelta
 import openpyxl
+import io
 
 # Instantiate a faker object
 fake = Faker()
