@@ -3,7 +3,6 @@ import pandas as pd
 import base64
 from faker import Faker
 from random import choice
-import xlsxwriter
 
 # Instantiate a faker object
 fake = Faker()
