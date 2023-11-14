@@ -78,4 +78,3 @@ if st.button('Generate Data'):
         df.to_csv('fake_hr_data.csv', index=False)
         st.success('Data exported successfully!')
 
-# Run the Streamlit app by typing `streamlit run your_script.py` in your terminal
