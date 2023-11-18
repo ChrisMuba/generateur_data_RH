@@ -54,7 +54,7 @@ def generate_hr_data(num_entries):
 
 # Streamlit app
 def main():
-    st.title("Fake HR Data Generator")
+    st.title("Attrition Data Generator")
     
     num_entries = st.number_input("Enter the number of data entries to generate (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
     
