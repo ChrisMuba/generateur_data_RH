@@ -26,7 +26,7 @@ st.markdown(
     
     Notre application vise à résoudre ce problème en générant automatiquement des données RH fictives aux propriétés réalistes, et qui peuvent être utilisées pour des projets personnels, des tutoriels et autres analyses en contrôle de gestion sociale et GPEC / GEPP.💡
     
-    
+    Le 🤖 Générateur de data RH comporte plusieurs pages, chacune axée sur la production de données pour une thématique RH différente :
     
     
     
