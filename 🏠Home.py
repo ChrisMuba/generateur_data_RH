@@ -53,8 +53,6 @@ st.markdown(
 
 st.balloons()
 
-st.balloons()
-
 with st.sidebar:
     st.image('gif/Robot_Emoji.gif')
 
