@@ -106,3 +106,21 @@ if st.button("Générer"):
     href = f'<a href="data:file/csv;base64,{b64}" download="data_rh_synthetiques.csv">Télécharger le fichier au format CSV</a>'
     st.markdown(href, unsafe_allow_html=True)
 
+
+with st.sidebar:
+    st.image('gif/Robot_Emoji.gif')
+
+
+st.markdown("")
+
+
+st.markdown("")
+
+
+# Add the "made with ❤️ by ..." text in the sidebar
+with st.sidebar:
+    st.write("Made with ❤️ by Chris MUBA")
+
+
+st.markdown("")
+
