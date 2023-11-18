@@ -60,13 +60,13 @@ def generate_fake_data(id):
     }
 
 # Streamlit app
-st.title('Fake HR Data Generator')
+st.title('Comp & Ben Data Generator')
 
 # User input for the number of data entries
 num_entries = st.number_input('How many data entries do you want to generate (max 1000)?', min_value=1, max_value=1000, value=50)
 
 # Generate data button
-if st.button('Generate Data'):
+if st.button('Generate Comp & Ben Data'):
     data = [generate_fake_data(i+1) for i in range(num_entries)]
     df = pd.DataFrame(data)
 
