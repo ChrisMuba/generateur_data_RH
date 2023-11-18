@@ -80,3 +80,21 @@ if st.button('Generate Comp & Ben Data'):
         df.to_csv('fake_hr_data.csv', index=False)
         st.success('Data exported successfully!')
 
+
+with st.sidebar:
+    st.image('gif/Robot_Emoji.gif')
+
+
+st.markdown("")
+
+
+st.markdown("")
+
+
+# Add the "made with ❤️ by ..." text in the sidebar
+with st.sidebar:
+    st.write("Made with ❤️ by Chris MUBA")
+
+
+st.markdown("")
+
