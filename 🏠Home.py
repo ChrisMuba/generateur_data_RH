@@ -23,6 +23,7 @@ st.markdown(
 
     En tant qu'analyste data RH, avoir accès à des exemples de données réalistes est inestimable pour développer des compétences dans des domaines tels que la visualisation des données, l'analyse statistique et la modelisation. 
     Cependant, les données RH réelles contiennent souvent des informations sensibles et ne peuvent pas être partagées publiquement. 
+    
     Cette application vise à résoudre ce problème en générant automatiquement des données RH fictives aux propriétés réalistes.💡
     
     
