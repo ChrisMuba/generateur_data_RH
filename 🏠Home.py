@@ -32,8 +32,7 @@ st.markdown(
     - Analyse de [données générales](https://data-rh.streamlit.app/generateur_data_rh)
     - Analyse du [turnover](https://data-rh.streamlit.app/%F0%9F%8F%83%F0%9F%8F%BC%E2%80%8D%E2%99%80%EF%B8%8FTurnover)
     - Analyse de [l'attrition](https://data-rh.streamlit.app/Attrition)
-    - Ask a question in our [community
-        forums](https://discuss.streamlit.io)
+    - Analyse des [rémunérations & avantages sociaux](https://data-rh.streamlit.app/Compensation_Benefits)
 
      **👈🏿 Sélectionnez un item dans la barre latérale** pour voir quelques exemples
     de ce que le générateur de data RH peut produire !
