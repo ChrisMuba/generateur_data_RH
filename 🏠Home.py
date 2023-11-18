@@ -38,8 +38,7 @@ st.markdown(
     - [Equivalent temps plein](https://data-rh.streamlit.app/Masse_Salariale)
     
 
-     **👈🏿 Sélectionnez un item dans la barre latérale** pour voir quelques exemples
-    de ce que le générateur de data RH peut produire !
+     **👈🏿 Sélectionnez un item dans la barre latérale** et, d'un simple clic, vous disposerez d'un ensemble de données prêt à être téléchargé et exploré. 📥 !
     
     ### See more complex demos
     - Use a neural net to [analyze the Udacity Self-driving Car Image
