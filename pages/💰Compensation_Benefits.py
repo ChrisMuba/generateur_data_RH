@@ -63,7 +63,7 @@ def generate_fake_data(id):
 st.title('Comp & Ben Data Generator')
 
 # User input for the number of data entries
-num_entries = st.number_input('How many data entries do you want to generate (max 1000)?', min_value=1, max_value=1000, value=50)
+num_entries = st.number_input('Entrer le nombre de données à générer (max 1000)', min_value=1, max_value=1000, value=50)
 
 # Generate data button
 if st.button('Generate Comp & Ben Data'):
