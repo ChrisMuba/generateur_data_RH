@@ -41,11 +41,13 @@ def generate_hr_data(num_entries):
 
 # Streamlit app
 def main():
-    st.title("Fake HR Data Generator")
+    st.title("Payroll costs Data Generator")
+
+    st.markdown("💸 Créez des données sur les coûts de paie, les taxes, les déductions et le suivi du temps. Analyser les opérations et les dépenses de paie.")
     
-    num_entries = st.number_input("Enter the number of data entries to generate (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
+    num_entries = st.number_input("Entrer le nombre de données à générer (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
     
-    if st.button("Generate HR Data"):
+    if st.button("Generate Payroll costs Data"):
         df = generate_hr_data(num_entries)
         df["Coût mensuel (€)"] = df["Coût mensuel (€)"].map("{:.2f}".format)
         df["Coût annuel (€)"] = df["Coût annuel (€)"].map("{:.2f}".format)
