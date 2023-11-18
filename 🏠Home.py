@@ -38,13 +38,14 @@ st.markdown(
     - [Equivalent temps plein](https://data-rh.streamlit.app/Masse_Salariale)
     
 
+     ### Comment ça marche 🛠️
      **👈🏿 Sélectionnez un item dans la barre latérale** et, d'un simple clic, vous disposerez d'un ensemble de données prêt à être téléchargé et exploré. 📥 !
     
-    ### See more complex demos
-    - Use a neural net to [analyze the Udacity Self-driving Car Image
-        Dataset](https://github.com/streamlit/demo-self-driving)
-    - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+    Toutes les données sont exportables au format CSV pour une analyse plus approfondie dans vos outils préférés comme Excel, Tableau, Power BI ou Python. 
+    La randomisation garantit que chaque nouvel ensemble de données est unique, tout en conservant des distributions réalistes. 📊
 
+    J'espère que vous trouverez HR Data Generator utile dans vos propres projets RH. N'hésitez pas à nous faire part de vos commentaires. 
+    Je cherche toujours à améliorer l'outil en fonction des besoins des utilisateurs. Bonne analyse ! 🧑‍🔬
     
 """
 )
