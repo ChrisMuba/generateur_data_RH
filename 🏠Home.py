@@ -1,4 +1,9 @@
+
 import streamlit as st
+
+st.snow()
+
+st.snow()
 
 st.set_page_config(
     page_title="Home",
@@ -49,8 +54,6 @@ st.markdown(
     
 """
 )
-
-st.snow()
 
 with st.sidebar:
     st.image('gif/Robot_Emoji.gif')
