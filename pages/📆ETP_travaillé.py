@@ -53,6 +53,23 @@ def main():
         href = f'<a href="data:file/csv;base64,{b64}" download="hr_data.csv">Télécharger le fichier CSV</a>'
         st.markdown(href, unsafe_allow_html=True)
 
+with st.sidebar:
+    st.image('gif/Robot_Emoji.gif')
+
+
+st.markdown("")
+
+
+st.markdown("")
+
+
+# Add the "made with ❤️ by ..." text in the sidebar
+with st.sidebar:
+    st.write("Made with ❤️ by Chris MUBA")
+
+
+st.markdown("")
+
 # Run the app
 if __name__ == "__main__":
     main()
