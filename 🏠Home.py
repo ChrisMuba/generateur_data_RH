@@ -50,6 +50,8 @@ st.markdown(
 """
 )
 
+st.snow()
+
 with st.sidebar:
     st.image('gif/Robot_Emoji.gif')
 
