@@ -71,6 +71,10 @@ st.title("Turnover Data Generator")
 
 st.markdown("🔄 Générez des données pour comprendre la dynamique du turnover des employés et identifiez les modèles qui pourraient aider à améliorer les stratégies de rétention.")
 
+st.markdown("")
+
+st.markdown("Données générées sur une seule année, à choisir")
+
 num_entries = st.number_input("Entrer le nombre de données à générer (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
 year_selection = st.checkbox("Generer les données pour une année spécifique")
 
