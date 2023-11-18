@@ -62,7 +62,7 @@ def generate_fake_data(id):
 # Streamlit app
 st.title('Comp & Ben Data Generator')
 
-st.markdown("💰 Produisez des données sur les salaires, les primes, les coûts des avantages sociaux. Pratiquez la modélisation et la prévision de la rémunération."
+st.markdown("💰 Produisez des données sur les salaires, les primes, les coûts des avantages sociaux. Pratiquez la modélisation et la prévision de la rémunération.")
 
 # User input for the number of data entries
 num_entries = st.number_input('Entrer le nombre de données à générer (max 1000)', min_value=1, max_value=1000, value=50)
