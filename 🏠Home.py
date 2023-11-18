@@ -29,6 +29,7 @@ st.markdown(
    
     ### Vous voulez en savoir plus ?
      Le 🤖 Générateur de data RH comporte plusieurs pages, chacune axée sur la production de données pour une thématique RH différente :
+    - Analyse de [données générales](https://data-rh.streamlit.app/generateur_data_rh)
     - Analyse du [turnover](https://data-rh.streamlit.app/%F0%9F%8F%83%F0%9F%8F%BC%E2%80%8D%E2%99%80%EF%B8%8FTurnover)
     - Analyse de [l'attrition](https://data-rh.streamlit.app/Attrition)
     - Ask a question in our [community
