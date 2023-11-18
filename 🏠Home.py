@@ -24,7 +24,7 @@ st.markdown(
     En tant qu'analyste data RH, avoir accès à des exemples de données réalistes est inestimable pour développer des compétences dans des domaines tels que la visualisation des données, l'analyse statistique et la modelisation. 
     Cependant, les données RH réelles contiennent souvent des informations sensibles et ne peuvent pas être partagées publiquement.🤐
     
-    Notre application vise à résoudre ce problème en générant des données RH fictives aux propriétés réalistes, et qui peuvent être utilisées pour des projets personnels, des tutoriels et autres analyses en contrôle de gestion sociale et GPEC / GEPP.💡
+    Notre application vise à résoudre ce problème en générant automatiquement des données RH fictives aux propriétés réalistes, et qui peuvent être utilisées pour des projets personnels, des tutoriels et autres analyses en contrôle de gestion sociale et GPEC / GEPP.💡
     
    
     ### Vous voulez en savoir plus ?
