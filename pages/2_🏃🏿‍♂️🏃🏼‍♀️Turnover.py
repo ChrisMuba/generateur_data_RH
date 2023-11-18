@@ -87,7 +87,7 @@ if year_selection:
         href = f'<a href="data:file/csv;base64,{b64}" download="hr_data.csv">Download CSV File</a>'
         st.markdown(href, unsafe_allow_html=True)
 else:
-    if st.button("Generate HR Data"):
+    if st.button("Generer"):
         df = generate_hr_data(num_entries)
         st.dataframe(df.head(50))
         
