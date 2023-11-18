@@ -51,9 +51,7 @@ st.markdown(
 """
 )
 
-st.snow()
-
-st.snow()
+st.balloons()
 
 with st.sidebar:
     st.image('gif/Robot_Emoji.gif')
