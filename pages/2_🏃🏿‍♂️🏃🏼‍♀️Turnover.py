@@ -69,7 +69,7 @@ def generate_hr_data(num_entries):
 # Generate HR data based on user input
 st.title("Turnover Data Generator")
 
-st.markdown("🔄 Générez des données pour comprendre la vitesse à laquelle les employés quittent l'entreprise et identifier les causes et solutions potentielles.")
+st.markdown("🔄 Générez des données pour comprendre la dynamique du turnover des employés et identifiez les modèles qui pourraient aider à améliorer les stratégies de rétention.")
 
 num_entries = st.number_input("Entrer le nombre de données à générer (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
 year_selection = st.checkbox("Generer les données pour une année spécifique")
