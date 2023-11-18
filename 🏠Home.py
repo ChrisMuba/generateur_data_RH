@@ -29,8 +29,7 @@ st.markdown(
     
     Le générateur de données RH est une application gratuite spécialement conçue pour les projets d'études de données 
     en **contrôle de gestion sociale, GPEC / GEPP et autres analyses** de données RH.  
-    **👈🏿 Sélectionnez un item dans la barre latérale** pour voir quelques exemples
-    de ce que le générateur de data RH peut produire !
+   
     ### Vous voulez en savoir plus ?
      Le 🤖 Générateur de data RH comporte plusieurs pages, chacune axée sur la production de données pour une thématique RH différente :
     - Check out [streamlit.io](https://streamlit.io)
@@ -41,6 +40,9 @@ st.markdown(
     - Use a neural net to [analyze the Udacity Self-driving Car Image
         Dataset](https://github.com/streamlit/demo-self-driving)
     - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+
+     **👈🏿 Sélectionnez un item dans la barre latérale** pour voir quelques exemples
+    de ce que le générateur de data RH peut produire !
 """
 )
 
