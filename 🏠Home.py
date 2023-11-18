@@ -45,7 +45,7 @@ st.markdown(
     La randomisation garantit que chaque nouvel ensemble de données est unique, tout en conservant des distributions réalistes. 📊
 
     J'espère que vous trouverez 🤖 Générateur de data RH utile dans vos propres projets. N'hésitez pas à nous faire part de vos commentaires. 
-    Je cherche toujours à améliorer l'outil en fonction des besoins des utilisateurs. Bonne analyse ! 🧑‍🔬
+    Je cherche toujours à améliorer l'outil en fonction des besoins des utilisateurs. Bonne analyse ! 🧑🏿‍🏫
     
 """
 )
