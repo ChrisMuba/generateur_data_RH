@@ -33,13 +33,16 @@ st.markdown(
     - Jump into our [documentation](https://docs.streamlit.io)
     - Ask a question in our [community
         forums](https://discuss.streamlit.io)
+
+     **👈🏿 Sélectionnez un item dans la barre latérale** pour voir quelques exemples
+    de ce que le générateur de data RH peut produire !
+    
     ### See more complex demos
     - Use a neural net to [analyze the Udacity Self-driving Car Image
         Dataset](https://github.com/streamlit/demo-self-driving)
     - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
 
-     **👈🏿 Sélectionnez un item dans la barre latérale** pour voir quelques exemples
-    de ce que le générateur de data RH peut produire !
+    
 """
 )
 
