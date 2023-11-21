@@ -101,6 +101,4 @@ with st.sidebar:
 with st.sidebar:
     st.write("Made with ❤️ by Chris MUBA")
 
-# The rest of your Streamlit code (if any) would go here
-
 
