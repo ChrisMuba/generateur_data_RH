@@ -62,14 +62,6 @@ def generate_hr_data_for_year(num_entries, year):
     df = pd.DataFrame(data)
     return df
 
-# Function to generate the fake HR data
-def generate_hr_data_for_year(num_entries):
-    # Calculate the probability of leaving based on the percentage range (3% to 20%)
-    prob_leaving = np.random.uniform(0.03, 0.20)
-    data = [generate_row_for_year(i, datetime.now().year, prob_leaving) for i in range(1, num_entries + 1)]
-    df = pd.DataFrame(data)
-    return df
-
 # Generate HR data based on user input
 st.title("Turnover Data Generator")
 st.markdown("🔄 Générez des données pour comprendre la dynamique du turnover des employés et identifiez les modèles qui pourraient aider à améliorer les stratégies de rétention.")
