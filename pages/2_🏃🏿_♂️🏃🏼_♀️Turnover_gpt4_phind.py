@@ -87,14 +87,14 @@ if year_selection:
        st.markdown(href, unsafe_allow_html=True)
 else:
    if st.button("Generer"):
-        df = generate_hr_data(num_entries)
-        st.dataframe(df.head(50))
-        
-        # Export data as CSV
-        csv = df.to_csv(index=False)
-        b64 = base64.b64encode(csv.encode()).decode()
-        href = f'<a href="data:file/csv;base64,{b64}" download="hr_data.csv">Download CSV File</a>'
-        st.markdown(href, unsafe_allow_html=True)
+  df = generate_hr_data_for_year(num_entries)
+  st.dataframe(df.head(50))
+  # Export data as CSV
+  csv = df.to_csv(index=False)
+  b64 = base64.b64encode(csv.encode()).decode()
+  href = f'<a href="data:file/csv;base64,{b64}" download="hr_data.csv">Download CSV File</a>'
+  st.markdown(href, unsafe_allow_html=True)
+
 
 
 with st.sidebar:
