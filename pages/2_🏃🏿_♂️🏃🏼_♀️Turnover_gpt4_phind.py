@@ -76,7 +76,7 @@ num_entries = st.number_input("Entrer le nombre de données à générer (max 10
 year_selection = st.checkbox("Generer les données pour une année spécifique")
 if year_selection:
     selected_year = st.number_input("Enter the year", min_value=1900, max_value=datetime.now().year, value=datetime.now().year, step=1, format="%d")
-   if st.button("Generate Turnover Data"):
+    if st.button("Generate Turnover Data"):
         df = generate_hr_data_for_year(num_entries, selected_year)
         st.dataframe(df.head(50))
         # Export data as CSV
@@ -105,4 +105,6 @@ with st.sidebar:
     st.write("Made with ❤️ by Me")
 
 st.markdown("")
+   
+
    
