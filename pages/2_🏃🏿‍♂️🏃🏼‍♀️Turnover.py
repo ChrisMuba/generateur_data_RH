@@ -99,7 +99,7 @@ with st.sidebar:
 
 # Add the "made with ❤️ by ..." text in the sidebar
 with st.sidebar:
-    st.write("Made with ❤️ by Me")
+    st.write("Made with ❤️ by Chris MUBA")
 
 # The rest of your Streamlit code (if any) would go here
 
