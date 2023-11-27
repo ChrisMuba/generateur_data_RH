@@ -30,7 +30,7 @@ def random_date(start, end):
 
 # Function to generate a single row of data
 def generate_row(id):
-    recruitment_date = random_date(datetime(2000, 1, 1), datetime.now())
+    recruitment_date = random_date(datetime(2013, 1, 1), datetime.now())
     leaving_date = random_date(recruitment_date, datetime.now())
     
     reason_for_departure = fake.random_element(elements=("Mise à pied", "Démission", "Résiliation", "Retraite"))
