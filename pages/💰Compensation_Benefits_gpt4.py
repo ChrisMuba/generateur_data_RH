@@ -68,23 +68,24 @@ st.markdown("💰 Produisez des données sur les salaires, les primes, les coût
 # User input for the number of data entries
 num_entries = st.number_input('Entrer le nombre de données à générer (max 1000)', min_value=1, max_value=1000, value=50)
 
-# Initialize an empty DataFrame
-df = pd.DataFrame()
+# Initialize session state for DataFrame
+if 'df' not in st.session_state:
+    st.session_state['df'] = pd.DataFrame()
 
 # Generate data button
 if st.button('Generate Comp & Ben Data'):
     data = [generate_fake_data(i+1) for i in range(num_entries)]
-    df = pd.DataFrame(data)
+    st.session_state['df'] = pd.DataFrame(data)
 
     # Show the first 50 rows in the app
-    st.write(df.head(50))
+    st.write(st.session_state['df'].head(50))
 
 # Check if DataFrame is not empty, then show 'Export to CSV' button
-if not df.empty:
+if not st.session_state['df'].empty:
     if st.button('Export to CSV'):
-        # Export data as CSV
-        csv = df.to_csv(index=False)
-        b64 = base64.b64encode(csv.encode()).decode()
+        # Convert DataFrame to CSV
+        csv = st.session_state['df'].to_csv(index=False).encode('utf-8')
+        b64 = base64.b64encode(csv).decode()
         href = f'<a href="data:file/csv;base64,{b64}" download="hr_data.csv">Download CSV File</a>'
         st.markdown(href, unsafe_allow_html=True)
         st.success('Data exported successfully!')
