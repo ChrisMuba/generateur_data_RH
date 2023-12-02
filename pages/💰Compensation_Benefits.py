@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import base64
 from faker import Faker
 from random import randint, choice
 
@@ -79,6 +80,16 @@ if st.button('Generate Comp & Ben Data'):
     if st.button('Export to CSV'):
         df.to_csv('fake_hr_data.csv', index=False)
         st.success('Data exported successfully!')
+        
+        # Export data as CSV
+        csv = df.to_csv(index=False)
+        b64 = base64.b64encode(csv.encode()).decode()
+        href = f'<a href="data:file/csv;base64,{b64}" download="hr_data.csv">Download CSV File</a>'
+        st.markdown(href, unsafe_allow_html=True)
+
+
+
+
 
 
 with st.sidebar:
