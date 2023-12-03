@@ -42,9 +42,9 @@ def main():
 
     if st.button("Générer les données"):
         df = generate_hr_data(num_entries)
-        df["Nombre d'heures rémunérées par mois"] = df["Nombre d'heures rémunérées par mois"].map("{:.2f}".format)
-        df["Equivalent temps plein"] = df["Equivalent temps plein"].map("{:.2f}".format)
-        df["Equivalent temps plein travaillé"] = df["Equivalent temps plein travaillé"].map("{:.2f}".format)
+        df["Nombre_heures_rémunérées_par_mois"] = df["Nombre_heures_rémunérées_par_mois"].map("{:.2f}".format)
+        df["Equivalent_temps_plein"] = df["Equivalent_temps_plein"].map("{:.2f}".format)
+        df["Equivalent_temps_plein_travaillé"] = df["Equivalent_temps_plein_travaillé"].map("{:.2f}".format)
         st.dataframe(df.head(50))
 
         # Export data as CSV
