@@ -21,11 +21,11 @@ def generate_row(emp_id):
         "Matricule": emp_id,
         "Nom": last_name,
         "Prénom": first_name,
-        "Nombre d'heures par semaine": num_hours_per_week,
-        "Nombre d'heures rémunérées par mois": num_paid_hours_per_month,
-        "Equivalent temps plein": fte,
-        "Nombre de mois de présence": num_months_presence,
-        "Equivalent temps plein travaillé": fte_worked,
+        "Nombre_heures_par_semaine": num_hours_per_week,
+        "Nombre_heures_rémunérées_par_mois": num_paid_hours_per_month,
+        "Equivalent_temps_plein": fte,
+        "Nombre_de_mois_de_présence": num_months_presence,
+        "Equivalent_temps_plein_travaillé": fte_worked,
     }
 
 # Generate fake HR data
