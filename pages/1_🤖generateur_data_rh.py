@@ -67,7 +67,6 @@ def generate_row(id):
         "Prénom": fake.first_name(),
         "Date de naissance": dob.strftime('%d/%m/%Y'),
         "Lieu de naissance": fake.city(),
-        #"Genre": fake.random_element(elements=("Male", "Female")),
         "Genre": choices(["Homme", "Femme"], weights=[55, 45], k=1)[0],
         "Adresse": fake.address(),
         "Date de recrutement": recruitment_date.strftime('%d/%m/%Y'),
