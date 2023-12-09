@@ -63,19 +63,19 @@ st.markdown("🔄 Générez des données pour comprendre la dynamique du turnove
 st.markdown("")
 
 num_entries = st.number_input("Entrer le nombre de données à générer (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
-year_selection = st.checkbox("Generer les données pour une année spécifique")
+#year_selection = st.checkbox("Generer les données pour une année spécifique")
 
-if year_selection:
-    selected_year = st.number_input("Enter the year", min_value=1900, max_value=datetime.now().year, value=datetime.now().year, step=1, format="%d")
-    if st.button("Generate Turnover Data"):
-        df = generate_hr_data_for_year(num_entries, selected_year)
-        st.dataframe(df.head(50))
+#if year_selection:
+    #selected_year = st.number_input("Enter the year", min_value=1900, max_value=datetime.now().year, value=datetime.now().year, step=1, format="%d")
+    #if st.button("Generate Turnover Data"):
+        #df = generate_hr_data_for_year(num_entries, selected_year)
+        #st.dataframe(df.head(50))
         # Export data as CSV
-        csv = df.to_csv(index=False)
-        b64 = base64.b64encode(csv.encode()).decode()
-        href = f'<a href="data:file/csv;base64,{b64}" download="hr_data_{selected_year}.csv">Download CSV File</a>'
-        st.markdown(href, unsafe_allow_html=True)
-else:
+        #csv = df.to_csv(index=False)
+        #b64 = base64.b64encode(csv.encode()).decode()
+        #href = f'<a href="data:file/csv;base64,{b64}" download="hr_data_{selected_year}.csv">Download CSV File</a>'
+        #st.markdown(href, unsafe_allow_html=True)
+#else:
     if st.button("Generer"):
         df = generate_hr_data(num_entries)
         st.dataframe(df.head(50))
