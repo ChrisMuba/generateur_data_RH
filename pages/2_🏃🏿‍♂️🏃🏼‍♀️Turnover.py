@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import base64
 from faker import Faker
+from random import choices
 from random import randint
 from datetime import datetime, timedelta
 import numpy as np  # Import numpy for random choice
@@ -37,7 +38,9 @@ def generate_row_for_year(id, year, prob_leaving=None):
     # Determine if the employee leaves based on the probability
     if prob_leaving is not None and np.random.rand() < prob_leaving:
         leaving_date = random_date(recruitment_date, end_date)
-        reason_for_departure = fake.random_element(elements=("Mise à pied", "Démission", "Résiliation", "Retraite"))
+        #reason_for_departure = fake.random_element(elements=("Mise à pied", "Démission", "Résiliation", "Retraite"))
+        reason_weights = [0.44, 0.20, 0.11, 0.02, 0.14, 0.06, 0.03]  # Weights for Dismissal, Resignation, Conventional termination
+        reason_for_departure = choices(["Démission", "Fin_Période_Essai", "Rupture_conventionnelle", "Licenciement_économique", "Licenciement", "Retraite", "Autres"], weights=reason_weights, k=1)[0]
     department = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
     job_title = fake.random_element(elements=job_titles[department])
     return {
