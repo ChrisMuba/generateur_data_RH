@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import base64
 from faker import Faker
+from random import choices
 from random import randint, uniform
 
 # Instantiate a faker object
@@ -25,6 +26,8 @@ job_titles = {
 def generate_row(id):
     department = fake.random_element(elements=("HR", "Sales", "Marketing", "IT", "Finance"))
     job_title = fake.random_element(elements=job_titles[department])
+    reason_weights = [0.44, 0.20, 0.11, 0.02, 0.14, 0.06, 0.03]  # Weights for Dismissal, Resignation, Conventional termination
+    reason_for_departure = choices(["Démission", "Fin_Période_Essai", "Rupture_conventionnelle", "Licenciement_économique", "Licenciement", "Retraite", "Autres"], weights=reason_weights, k=1)[0]
     
     return {
         "ID": id,
@@ -34,11 +37,12 @@ def generate_row(id):
         "Age": randint(18, 57),
         "Years of Service": randint(1, 10),
         "Annual Salary (€)": randint(23000, 65000),
-        "Reason for Leaving": fake.random_element(elements=(
-            "Job Dissatisfaction", "Personal Reasons", "Lack of Career Growth",
-            "Better Opportunity Elsewhere", "Inadequate Compensation",
-            "Work-Life Balance Issues", "Poor Management", "Organizational Change",
-            "Retirement", "Resignation")),
+        "Reason for Leaving": reason_for_departure,
+        #"Reason for Leaving": fake.random_element(elements=(
+            #"Job Dissatisfaction", "Personal Reasons", "Lack of Career Growth",
+            #"Better Opportunity Elsewhere", "Inadequate Compensation",
+            #"Work-Life Balance Issues", "Poor Management", "Organizational Change",
+            #"Retirement", "Resignation")),
         "Promotion": fake.random_element(elements=("Yes", "No")),
         "Training Times": randint(1, 20),
         "Performance Rating": round(uniform(1, 10), 2),
