@@ -34,8 +34,8 @@ def generate_row(id):
     end_date = datetime(2013, 12, 31)
     recruitment_date = random_date(start_date, end_date)
     leaving_date = random_date(recruitment_date, recruitment_date + timedelta(days=365 * 2))  # Assuming a max of 2 years after recruitment
-    reason_weights = [0.43, 0.2, 0.15, 0.04, 0.18]  # Weights for Dismissal, Resignation, Conventional termination
-    reason_for_departure = choices(["Démission", "Fin_Période_Essai", "Rupture_conventionnelle", "Licenciement_économique", "Licenciement"], weights=reason_weights, k=1)[0]
+    reason_weights = [0.44, 0.20, 0.11, 0.02, 0.14, 0.06, 0.03]  # Weights for Dismissal, Resignation, Conventional termination
+    reason_for_departure = choices(["Démission", "Fin_Période_Essai", "Rupture_conventionnelle", "Licenciement_économique", "Licenciement", "Retraite", "Autres"], weights=reason_weights, k=1)[0]
     department = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
     job_title = fake.random_element(elements=job_titles[department])
     return {
