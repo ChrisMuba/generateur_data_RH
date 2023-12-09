@@ -63,7 +63,7 @@ st.markdown("🔄 Générez des données pour comprendre la dynamique du turnove
 st.markdown("")
 
 num_entries = st.number_input("Entrer le nombre de données à générer (max 1000)", min_value=1, max_value=1000, value=50, step=1, format="%d")
-#year_selection = st.checkbox("Generer les données pour une année spécifique")
+year_selection = st.checkbox("Generer les données pour une année spécifique")
 
 if year_selection:
     selected_year = st.number_input("Enter the year", min_value=1900, max_value=datetime.now().year, value=datetime.now().year, step=1, format="%d")
