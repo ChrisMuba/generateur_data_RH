@@ -23,8 +23,8 @@ def generate_row(id):
     min_recruitment_date = dob + timedelta(days=16 * 365)  # Minimum recruitment date is 16 years after date of birth
     recruitment_date = random_date(min_recruitment_date, datetime.now())
     leaving_date = random_date(recruitment_date, datetime.now())
-    reason_weights = [0.47, 0.22, 0.12, 0.02, 0.15, 0.06, 0.03]  # Weights for Dismissal, Resignation, Conventional termination
-    reason_for_departure = choices(["Démission", "Fin_Période_Essai", "Rupture_conventionnelle", "Licenciement_économique", "Licenciement", "Retraite", "Licenciement", "Autres"], weights=reason_weights, k=1)[0]
+    reason_weights = [0.44, 0.20, 0.11, 0.02, 0.14, 0.06, 0.03]  # Weights for Dismissal, Resignation, Conventional termination
+    reason_for_departure = choices(["Démission", "Fin_Période_Essai", "Rupture_conventionnelle", "Licenciement_économique", "Licenciement", "Retraite", "Autres"], weights=reason_weights, k=1)[0]
     
     service = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
     
