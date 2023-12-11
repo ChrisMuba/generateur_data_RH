@@ -51,7 +51,7 @@ def generate_row_for_year(id, year, prob_leaving=None):
         
     elif service == "R&D":
         sub_elements = ('Chef de projet R&D', 'Ingénieur généraliste', 'Ingénieur tests et essais', 
-                        'Statisticien', 'Chargé d\’intelligence économique', 'Ingénieur d\'études environnement')
+                        'Statisticien', 'Chargé d\'intelligence économique', 'Ingénieur d\'études environnement')
         
     elif service == "Ventes":
         sub_elements = ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires', 'Animateur des ventes',
