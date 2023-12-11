@@ -33,23 +33,23 @@ def generate_row(id):
     
     return {
         "ID": id,
-        "Last Name": fake.last_name(),
-        "First Name": fake.first_name(),
+        "Last_Name": fake.last_name(),
+        "First_Name": fake.first_name(),
         "Gender": genre,
         "Age": randint(18, 57),
-        "Years of Service": randint(1, 10),
-        "Annual Salary (€)": randint(23000, 65000),
-        "Reason for Leaving": reason_for_departure,
+        "Years_of_Service": randint(1, 10),
+        "Annual_Salary_€": randint(23000, 65000),
+        "Reason_for_Leaving": reason_for_departure,
         #"Reason for Leaving": fake.random_element(elements=(
             #"Job Dissatisfaction", "Personal Reasons", "Lack of Career Growth",
             #"Better Opportunity Elsewhere", "Inadequate Compensation",
             #"Work-Life Balance Issues", "Poor Management", "Organizational Change",
             #"Retirement", "Resignation")),
         "Promotion": fake.random_element(elements=("Yes", "No")),
-        "Training Times": randint(1, 20),
-        "Performance Rating": round(uniform(1, 10), 2),
+        "Training_Times": randint(1, 20),
+        "Performance_Rating": round(uniform(1, 10), 2),
         "Department": department,
-        "Job Title": job_title
+        "Job_Title": job_title
     }
 
 # Generate fake HR data
