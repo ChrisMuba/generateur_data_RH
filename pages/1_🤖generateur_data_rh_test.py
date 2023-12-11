@@ -40,7 +40,7 @@ def generate_row(id):
                         'Responsable SIRH', 'Responsable GPEC GEPP')
     elif service == "Marketing":
         sub_elements = ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
-                        'Responsable marketing', 'Ingénieur packaging')
+                        'Ingénieur packaging')
     elif service == "Finance":
         sub_elements = ('Assistant de gestion', 'Analyste financier', 'Comptable', 'Contrôleur de gestion')
         
