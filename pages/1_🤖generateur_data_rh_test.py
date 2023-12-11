@@ -33,8 +33,8 @@ def generate_row(id):
     service = choices(["Communication", "RH", "Marketing", "Finance", "Informatique", "R&D", "Ventes", "Services_techniques"], weights=service_weights, k=1)[0]
 
     if service == "Communication":
-        sub_elements = ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale',
-                        'Responsable SIRH', 'Responsable GPEC GEPP')
+        sub_elements = ('Chargé de communication', 'Community manager')
+        
     elif service == "RH":
         sub_elements = ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale')
         
