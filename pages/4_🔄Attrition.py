@@ -9,27 +9,49 @@ from random import randint, uniform
 fake = Faker()
 
 # Department job titles
-job_titles = {
-    "HR": ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale',
-           'Responsable SIRH', 'Responsable GPEC GEPP'),
-    "Sales": ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires',
-              'Gestionnaire CRM', 'Responsable commercial'),
-    "Marketing": ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
-                  'Responsable marketing', 'Ingénieur packaging'),
-    "IT": ('Administrateur système', 'Administrateur réseaux',
-           'Responsable sécurité informatique', 'Webmaster', 'Data engineer'),
-    "Finance": ('Assistant de gestion', 'Analyste financier', 'Auditeur interne',
-                'Comptable', 'Contrôleur de gestion')
-}
 
 # Generate a single row of data
 def generate_row(id):
     genre_weights = [55, 45] # Weights for Homme, Femme
     genre = choices(["Homme", "Femme"], weights=genre_weights, k=1)[0],
-    department = fake.random_element(elements=("HR", "Sales", "Marketing", "IT", "Finance"))
-    job_title = fake.random_element(elements=job_titles[department])
+    
     reason_weights = [0.44, 0.20, 0.11, 0.02, 0.14, 0.06, 0.03]  # Weights for Dismissal, Resignation, Conventional termination
     reason_for_departure = choices(["Démission", "Fin_Période_Essai", "Rupture_conventionnelle", "Licenciement_économique", "Licenciement", "Retraite", "Autres"], weights=reason_weights, k=1)[0]
+
+    service_weights = [0.03, 0.05, 0.10, 0.10, 0.15, 0.15, 0.18, 0.24]  # Weights for RH, Ventes, Marketing, etc... 
+    service = choices(["Communication", "RH", "Marketing", "Finance", "Informatique", "R&D", "Ventes", "Services_techniques"], weights=service_weights, k=1)[0]
+
+    if service == "Communication":
+        sub_elements = ('Chargé de communication', 'Community manager')
+        
+    elif service == "RH":
+        sub_elements = ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale')
+        
+    elif service == "Marketing":
+        sub_elements = ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
+                        'Ingénieur packaging')
+        
+    elif service == "Finance":
+        sub_elements = ('Assistant de gestion', 'Analyste financier', 'Comptable', 'Contrôleur de gestion')
+        
+    elif service == "Informatique":
+        sub_elements = ('Administrateur système', 'Administrateur réseaux', 'Administrateur Bases de données',
+                        'Responsable cybersécurité', 'Webmaster', 'Data engineer')
+        
+    elif service == "R&D":
+        sub_elements = ('Chef de projet R&D', 'Ingénieur généraliste', 'Ingénieur tests et essais', 
+                        'Statisticien', 'Chargé d\'intelligence économique', 'Ingénieur d\'études environnement')
+        
+    elif service == "Ventes":
+        sub_elements = ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires', 'Animateur des ventes',
+                        'Gestionnaire CRM', 'Responsable commercial', 'Business developer', 'Ingénieur avant-vente')
+        
+    elif service == "Services_techniques":
+        sub_elements = ('Acheteur', 'Chargé de la qualité', 'Contrôleur des coûts', 'Gestionnaire Supply Chain', 
+                        'Responsable Entrepôt', 'Ingénieur planification', 'Ingénieur amélioration continue', 
+                        'Chargé Affaires Réglementaires', 'Responsable matériel', 'Gestionnaire Flux Logistiques')
+    else:
+        sub_elements = ()
     
     return {
         "ID": id,
@@ -40,16 +62,11 @@ def generate_row(id):
         "Years_of_Service": randint(1, 10),
         "Annual_Salary_€": randint(23000, 65000),
         "Reason_for_Leaving": reason_for_departure,
-        #"Reason for Leaving": fake.random_element(elements=(
-            #"Job Dissatisfaction", "Personal Reasons", "Lack of Career Growth",
-            #"Better Opportunity Elsewhere", "Inadequate Compensation",
-            #"Work-Life Balance Issues", "Poor Management", "Organizational Change",
-            #"Retirement", "Resignation")),
         "Promotion": fake.random_element(elements=("Yes", "No")),
         "Training_Times": randint(1, 20),
         "Performance_Rating": round(uniform(1, 10), 2),
-        "Department": department,
-        "Job_Title": job_title
+        "Department": service,
+        "Job_Title": fake.random_element(elements=sub_elements)
     }
 
 # Generate fake HR data
