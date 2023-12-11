@@ -8,15 +8,6 @@ from random import randint, choice
 # Initialize Faker
 fake = Faker()
 
-# Define job titles for each department
-job_titles = {
-    "HR": ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale', 'Responsable SIRH', 'Responsable GPEC GEPP'),
-    "Sales": ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires', 'Gestionnaire CRM', 'Responsable commercial'),
-    "Marketing": ('Assistant marketing', 'Category manager', 'Chef de projet marketing', 'Responsable marketing', 'Ingénieur packaging'),
-    "IT": ('Administrateur système', 'Administrateur réseaux', 'Responsable sécurité informatique', 'Webmaster', 'Data engineer'),
-    "Finance": ('Assistant de gestion', 'Analyste financier', 'Auditeur interne', 'Comptable', 'Contrôleur de gestion')
-}
-
 # Define benefits package values
 benefits_values = {
     1: 500,
@@ -26,9 +17,44 @@ benefits_values = {
 
 # Function to generate a single row of fake data
 def generate_fake_data(id):
-    department = fake.random_element(elements=("HR", "Sales", "Marketing", "IT", "Finance"))
-    job_title = fake.random_element(elements=job_titles[department])
+    #department = fake.random_element(elements=("HR", "Sales", "Marketing", "IT", "Finance"))
+    #job_title = fake.random_element(elements=job_titles[department])
     #gender = fake.random_element(elements=("Male", "Female"))
+    service_weights = [0.03, 0.05, 0.10, 0.10, 0.15, 0.15, 0.18, 0.24]  # Weights for RH, Ventes, Marketing, etc... 
+    service = choices(["Communication", "RH", "Marketing", "Finance", "Informatique", "R&D", "Ventes", "Services_techniques"], weights=service_weights, k=1)[0]
+
+    if service == "Communication":
+        sub_elements = ('Chargé de communication', 'Community manager')
+        
+    elif service == "RH":
+        sub_elements = ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale')
+        
+    elif service == "Marketing":
+        sub_elements = ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
+                        'Ingénieur packaging')
+        
+    elif service == "Finance":
+        sub_elements = ('Assistant de gestion', 'Analyste financier', 'Comptable', 'Contrôleur de gestion')
+        
+    elif service == "Informatique":
+        sub_elements = ('Administrateur système', 'Administrateur réseaux', 'Administrateur Bases de données',
+                        'Responsable cybersécurité', 'Webmaster', 'Data engineer')
+        
+    elif service == "R&D":
+        sub_elements = ('Chef de projet R&D', 'Ingénieur généraliste', 'Ingénieur tests et essais', 
+                        'Statisticien', 'Chargé d\'intelligence économique', 'Ingénieur d\'études environnement')
+        
+    elif service == "Ventes":
+        sub_elements = ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires', 'Animateur des ventes',
+                        'Gestionnaire CRM', 'Responsable commercial', 'Business developer', 'Ingénieur avant-vente')
+        
+    elif service == "Services_techniques":
+        sub_elements = ('Acheteur', 'Chargé de la qualité', 'Contrôleur des coûts', 'Gestionnaire Supply Chain', 
+                        'Responsable Entrepôt', 'Ingénieur planification', 'Ingénieur amélioration continue', 
+                        'Chargé Affaires Réglementaires', 'Responsable matériel', 'Gestionnaire Flux Logistiques')
+    else:
+        sub_elements = ()
+
     gender_weights = [55, 45] # Weights for Homme, Femme
     gender = choices(["Homme", "Femme"], weights=gender_weights, k=1)[0]
     age = randint(28, 52)
@@ -50,8 +76,8 @@ def generate_fake_data(id):
 
     return {
         "ID": id,
-        "Department": department,
-        "Job Title": job_title,
+        "Department": service,
+        "Job Title": fake.random_element(elements=sub_elements),
         "Gender": gender,
         "Age": age,
         "Years at Company": years_at_company,
@@ -89,11 +115,6 @@ if st.button('Generate Comp & Ben Data'):
         b64 = base64.b64encode(csv.encode()).decode()
         href = f'<a href="data:file/csv;base64,{b64}" download="hr_data.csv">Download CSV File</a>'
         st.markdown(href, unsafe_allow_html=True)
-
-
-
-
-
 
 with st.sidebar:
     st.image('gif/Robot_Emoji.gif')
