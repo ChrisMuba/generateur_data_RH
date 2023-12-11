@@ -3,7 +3,7 @@ import pandas as pd
 import base64
 from faker import Faker
 from random import choices
-from random import randint
+from random import randint, choice
 
 # Initialize Faker
 fake = Faker()
