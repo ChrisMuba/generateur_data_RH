@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import base64
 from faker import Faker
-from random import randint, choice
+from random import choice
+from random import randint
 
 # Initialize Faker
 fake = Faker()
