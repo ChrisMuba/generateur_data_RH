@@ -57,18 +57,22 @@ def generate_row(id):
     elif service == "Marketing":
         sub_elements = ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
                         'Ingénieur packaging')
+        
     elif service == "Finance":
         sub_elements = ('Assistant de gestion', 'Analyste financier', 'Comptable', 'Contrôleur de gestion')
         
     elif service == "Informatique":
         sub_elements = ('Administrateur système', 'Administrateur réseaux', 'Administrateur Bases de données',
                         'Responsable cybersécurité', 'Webmaster', 'Data engineer')
+        
     elif service == "R&D":
         sub_elements = ('Chef de projet R&D', 'Ingénieur généraliste', 'Ingénieur tests et essais', 
                         'Statisticien', 'Chargé d\’intelligence économique', 'Ingénieur d\'études environnement')
+        
     elif service == "Ventes":
         sub_elements = ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires', 'Animateur des ventes',
                         'Gestionnaire CRM', 'Responsable commercial', 'Business developer', 'Ingénieur avant-vente')
+        
     elif service == "Services_techniques":
         sub_elements = ('Acheteur', 'Chargé de la qualité', 'Contrôleur des coûts', 'Gestionnaire Supply Chain', 
                         'Responsable Entrepôt', 'Ingénieur planification', 'Ingénieur amélioration continue', 
