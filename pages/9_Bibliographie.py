@@ -7,7 +7,7 @@ st.sidebar.success("Cliquez sur un :blue[chapitre] ou un :blue[quiz]")
 with st.sidebar:
     st.write("Made with ❤️ by Chris MUBA")
 with st.sidebar:
-        st.image('GIF/I_eat_data_for_breakfast.gif')
+        st.image('gif/I_eat_data_for_breakfast.gif')
 
 st.title('Bibliographie / Webographie')
 
