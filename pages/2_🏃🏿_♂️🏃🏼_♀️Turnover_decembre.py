@@ -40,14 +40,14 @@ def generate_row(id):
     job_title = fake.random_element(elements=job_titles[department])
     return {
         "ID": id,
-        "Last Name": fake.last_name(),
-        "First Name": fake.first_name(),
+        "Last_Name": fake.last_name(),
+        "First_Name": fake.first_name(),
         "Gender": gender,
-        "Recruitment Date": recruitment_date.strftime('%d/%m/%Y'),
-        "Date of Leaving": leaving_date.strftime('%d/%m/%Y'),
-        "Reason for Departure": reason_for_departure,
+        "Recruitment_Date": recruitment_date.strftime('%d/%m/%Y'),
+        "Date_of_Leaving": leaving_date.strftime('%d/%m/%Y'),
+        "Reason_for_Departure": reason_for_departure,
         "Department": department,
-        "Job Title": job_title
+        "Job_Title": job_title
     }
 
 # Function to generate the fake HR data
