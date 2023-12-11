@@ -20,6 +20,8 @@ def random_date(start, end):
 # function to generate a single row of data
 def generate_row(id):
     dob = random_date(datetime(1955, 1, 1), datetime(2007, 1, 1))
+    gender_weights = [55, 45] # Weights for Homme, Femme
+    gender = choices(["Homme", "Femme"], weights=gender_weights, k=1)[0]
     min_recruitment_date = dob + timedelta(days=16 * 365)  # Minimum recruitment date is 16 years after date of birth
     recruitment_date = random_date(min_recruitment_date, datetime.now())
     leaving_date = random_date(recruitment_date, datetime.now())
@@ -69,7 +71,7 @@ def generate_row(id):
         "Prénom": fake.first_name(),
         "Date_de_naissance": dob.strftime('%d/%m/%Y'),
         "Lieu_de_naissance": fake.city(),
-        "Genre": choices(["Homme", "Femme"], weights=[55, 45], k=1)[0],
+        "Genre": gender,
         "Adresse": fake.address(),
         "Date_de_recrutement": recruitment_date.strftime('%d/%m/%Y'),
         "Date_de_fin_de_contrat": leaving_date.strftime('%d/%m/%Y'),
