@@ -67,17 +67,17 @@ def generate_row(id):
         "Matricule": id,
         "Nom": fake.last_name(),
         "Prénom": fake.first_name(),
-        "Date de naissance": dob.strftime('%d/%m/%Y'),
-        "Lieu de naissance": fake.city(),
+        "Date_de_naissance": dob.strftime('%d/%m/%Y'),
+        "Lieu_de_naissance": fake.city(),
         "Genre": choices(["Homme", "Femme"], weights=[55, 45], k=1)[0],
         "Adresse": fake.address(),
-        "Date de recrutement": recruitment_date.strftime('%d/%m/%Y'),
-        "Date de fin de contrat": leaving_date.strftime('%d/%m/%Y'),
-        "Reason for Departure": reason_for_departure,
+        "Date_de_recrutement": recruitment_date.strftime('%d/%m/%Y'),
+        "Date_de_fin_de_contrat": leaving_date.strftime('%d/%m/%Y'),
+        "Reason_for_Departure": reason_for_departure,
         "Service": service,
-        "Poste occupé": fake.random_element(elements=sub_elements),
+        "Poste_occupé": fake.random_element(elements=sub_elements),
         "Diplôme": diplome,
-        "Salaire annuel brut": salary
+        "Salaire_annuel_brut": salary
     }
 
 
