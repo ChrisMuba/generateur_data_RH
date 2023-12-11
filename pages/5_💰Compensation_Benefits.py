@@ -57,13 +57,10 @@ def generate_fake_data(id):
     gender = choices(["Homme", "Femme"], weights=gender_weights, k=1)[0]
     age = randint(28, 52)
     years_at_company = randint(1, 12)
-    
-    #education_level = fake.random_element(elements=("BTS", "Licence", "Bachelor", "Master", "Ingenieur"))
 
     education_level_weights = [0.30, 0.23, 0.23, 0.12, 0.12]  # Weights for RH, Ventes, Marketing, etc... 
     education_level = choices(["BTS", "Licence", "Bachelor", "Master", "Ingenieur"], weights=education_level_weights, k=1)[0]
 
-    
     salary_ranges = {
         "BTS": (23000, 30999),
         "Licence": (31000, 34999),
@@ -71,6 +68,7 @@ def generate_fake_data(id):
         "Master": (35000, 65000),
         "Ingenieur": (35000, 65000)
     }
+    
     min_salary, max_salary = salary_ranges.get(education_level, (0, 0))
     salary = f"{randint(min_salary, max_salary)}€"
     bonus_percent = choice([0, 5, 10, 15, 20])
