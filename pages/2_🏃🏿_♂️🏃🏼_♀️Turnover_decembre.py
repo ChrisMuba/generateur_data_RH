@@ -29,7 +29,8 @@ def random_date(start, end):
 
 # Function to generate a single row of data
 def generate_row(id):
-    gender = choices(["Homme", "Femme"], weights=[55, 45], k=1)[0]
+    gender_weights = [55, 45] # Weights for Homme, Femme
+    gender = choices(["Homme", "Femme"], weights=gender_weights, k=1)[0]
     start_date = datetime(2023, 1, 1)
     end_date = datetime(2023, 12, 31)
     recruitment_date = random_date(start_date, end_date)
