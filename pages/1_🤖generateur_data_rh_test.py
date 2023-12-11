@@ -36,7 +36,8 @@ def generate_row(id):
         sub_elements = ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale',
                         'Responsable SIRH', 'Responsable GPEC GEPP')
     elif service == "RH":
-        sub_elements = ('Gestionnaire Rh & Paie', 'Contrôleur de gestion sociale')
+        sub_elements = ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale')
+        
     elif service == "Marketing":
         sub_elements = ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
                         'Ingénieur packaging')
