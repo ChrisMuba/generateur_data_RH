@@ -10,18 +10,23 @@ import numpy as np
 fake = Faker()
 
 # Define the job titles for each department
-job_titles = {
-    "RH": ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale',
-           'Responsable SIRH', 'Responsable GPEC GEPP'),
-    "Ventes": ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires',
-                'Gestionnaire CRM', 'Responsable commercial'),
-    "Marketing": ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
-                  'Responsable marketing', 'Ingénieur packaging'),
-    "Informatique": ('Administrateur système', 'Administrateur réseaux',
-                     'Responsable sécurité informatique', 'Webmaster', 'Data engineer'),
-    "Finance": ('Assistant de gestion', 'Analyste financier', 'Auditeur interne',
-                'Comptable', 'Contrôleur de gestion')
-}
+#job_titles = {
+    #"Communication": ('Chargé de communication', 'Community manager'),
+    #"RH": ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale'),
+    #"Marketing": ('Assistant marketing', 'Category manager', 'Chef de projet marketing', 
+                  #'Ingénieur packaging'),
+    #"Finance": ('Assistant de gestion', 'Analyste financier', 'Comptable', 
+                #'Contrôleur de gestion')
+    #"Informatique": ('Administrateur système', 'Administrateur réseaux', 'Administrateur Bases de données', 
+                     #'Responsable cybersécurité', 'Webmaster', 'Data engineer'),
+    #"R&D": ('Chef de projet R&D', 'Ingénieur généraliste', 'Ingénieur tests et essais', 
+            #'Statisticien', 'Chargé d\’intelligence économique', 'Ingénieur d\'études environnement'),
+    #"Ventes": ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires', 'Animateur des ventes', 
+               #'Gestionnaire CRM', 'Responsable commercial', 'Business developer', 'Ingénieur avant-vente'),
+    #"Services_techniques": ('Acheteur', 'Chargé de la qualité', 'Contrôleur des coûts', 'Gestionnaire Supply Chain', 
+                            #'Responsable Entrepôt', 'Ingénieur planification', 'Ingénieur amélioration continue', 
+                            #'Chargé Affaires Réglementaires', 'Responsable matériel', 'Gestionnaire Flux Logistiques')
+#}
 
 # Function to generate a random date within a range
 def random_date(start, end):
@@ -37,8 +42,40 @@ def generate_row(id):
     leaving_date = random_date(recruitment_date, recruitment_date + timedelta(days=30 * 3))  # Assuming a max of 6 months after recruitment
     reason_weights = [0.44, 0.20, 0.11, 0.02, 0.14, 0.06, 0.03]  # Weights for Dismissal, Resignation, Conventional termination
     reason_for_departure = choices(["Démission", "Fin_Période_Essai", "Rupture_conventionnelle", "Licenciement_économique", "Licenciement", "Retraite", "Autres"], weights=reason_weights, k=1)[0]
-    department = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
-    job_title = fake.random_element(elements=job_titles[department])
+    #department = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
+    #job_title = fake.random_element(elements=job_titles[department])
+    service_weights = [0.03, 0.05, 0.10, 0.10, 0.15, 0.15, 0.18, 0.24]  # Weights for RH, Ventes, Marketing, etc... 
+    #service = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
+    service = choices(["Communication", "RH", "Marketing", "Finance", "Informatique", "R&D", "Ventes", "Services_techniques"], weights=service_weights, k=1)[0]
+
+    if service == "Communication":
+        sub_elements = ('Chargé de communication', 'Community manager')
+        
+    elif service == "RH":
+        sub_elements = ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale')
+        
+    elif service == "Marketing":
+        sub_elements = ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
+                        'Ingénieur packaging')
+    elif service == "Finance":
+        sub_elements = ('Assistant de gestion', 'Analyste financier', 'Comptable', 'Contrôleur de gestion')
+        
+    elif service == "Informatique":
+        sub_elements = ('Administrateur système', 'Administrateur réseaux', 'Administrateur Bases de données',
+                        'Responsable cybersécurité', 'Webmaster', 'Data engineer')
+    elif service == "R&D":
+        sub_elements = ('Chef de projet R&D', 'Ingénieur généraliste', 'Ingénieur tests et essais', 
+                        'Statisticien', 'Chargé d\’intelligence économique', 'Ingénieur d\'études environnement')
+    elif service == "Ventes":
+        sub_elements = ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires', 'Animateur des ventes',
+                        'Gestionnaire CRM', 'Responsable commercial', 'Business developer', 'Ingénieur avant-vente')
+    elif service == "Services_techniques":
+        sub_elements = ('Acheteur', 'Chargé de la qualité', 'Contrôleur des coûts', 'Gestionnaire Supply Chain', 
+                        'Responsable Entrepôt', 'Ingénieur planification', 'Ingénieur amélioration continue', 
+                        'Chargé Affaires Réglementaires', 'Responsable matériel', 'Gestionnaire Flux Logistiques')
+    else:
+        sub_elements = ()
+        
     return {
         "ID": id,
         "Last_Name": fake.last_name(),
@@ -47,8 +84,8 @@ def generate_row(id):
         "Recruitment_Date": recruitment_date.strftime('%d/%m/%Y'),
         "Date_of_Leaving": leaving_date.strftime('%d/%m/%Y'),
         "Reason_for_Departure": reason_for_departure,
-        "Department": department,
-        "Job_Title": job_title
+        "Department": service,
+        "Job_Title": fake.random_element(elements=sub_elements)
     }
 
 # Function to generate the fake HR data
