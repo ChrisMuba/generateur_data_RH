@@ -13,7 +13,7 @@ st.title('Bibliographie / Webographie')
 
 st.markdown("*A faster way to build and share data apps* https://streamlit.io")
 
-st.markdown("*Low-Code Data Apps* https://plotly.com")
+st.markdown("*Etude sur le temps partiel en France - DARES* https://dares.travail-emploi.gouv.fr/donnees/le-temps-partiel")
 
 st.markdown("*High-level interface for data visualization* https://plotly.com/python-api-reference/plotly.express.html")
 
