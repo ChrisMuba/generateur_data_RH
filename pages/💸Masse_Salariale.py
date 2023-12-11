@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import base64
 from faker import Faker
+from random import choices
 from random import randint, uniform
 
 # Instantiate a faker object
@@ -12,8 +13,10 @@ departments = ["RH", "Ventes", "Marketing", "IT", "Finance"]
 
 # Generate a single row of data
 def generate_row(emp_id):
+    gender_weights = [55, 45] # Weights for Homme, Femme
+    gender = choices(["Homme", "Femme"], weights=gender_weights, k=1)[0]
     department = fake.random_element(elements=departments)
-    gender = fake.random_element(elements=("Homme", "Femme"))
+    #gender = fake.random_element(elements=("Homme", "Femme"))
     gross_monthly_salary = randint(1917, 5417)
     avg_employer_contributions = round(gross_monthly_salary * 0.33, 2)
     monthly_cost = round(gross_monthly_salary + avg_employer_contributions, 2)
