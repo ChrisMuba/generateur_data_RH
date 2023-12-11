@@ -47,11 +47,11 @@ def generate_row(id):
         "Prénom": fake.first_name(),
         #"Genre": fake.random_element(elements=("Male", "Female")),
         "Genre": choices(["Homme", "Femme"], weights=[55, 45], k=1)[0],
-        "Date de recrutement": recruitment_date.strftime('%d/%m/%Y'),
-        "Date de départ": leaving_date.strftime('%d/%m/%Y'),
-        "Raison du départ": reason_for_departure,
+        "Date_de_recrutement": recruitment_date.strftime('%d/%m/%Y'),
+        "Date_de_départ": leaving_date.strftime('%d/%m/%Y'),
+        "Raison_du_départ": reason_for_departure,
         "Service": department,
-        "Poste occupé": job_title
+        "Poste_occupé": job_title
     }
 
 # Function to generate the fake HR data
