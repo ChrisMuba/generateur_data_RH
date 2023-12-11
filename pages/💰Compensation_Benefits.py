@@ -17,9 +17,7 @@ benefits_values = {
 
 # Function to generate a single row of fake data
 def generate_fake_data(id):
-    #department = fake.random_element(elements=("HR", "Sales", "Marketing", "IT", "Finance"))
-    #job_title = fake.random_element(elements=job_titles[department])
-    #gender = fake.random_element(elements=("Male", "Female"))
+    
     service_weights = [0.03, 0.05, 0.10, 0.10, 0.15, 0.15, 0.18, 0.24]  # Weights for RH, Ventes, Marketing, etc... 
     service = choices(["Communication", "RH", "Marketing", "Finance", "Informatique", "R&D", "Ventes", "Services_techniques"], weights=service_weights, k=1)[0]
 
