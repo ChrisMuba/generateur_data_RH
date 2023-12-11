@@ -17,7 +17,7 @@ st.markdown("*Etude sur le temps partiel en France - DARES* https://dares.travai
 
 st.markdown("*Etude sur le temps partiel en France - INSEE* https://www.insee.fr/fr/statistiques/2489589")
 
-st.markdown("*Graph Objects in Python* https://plotly.com/python/graph-objects")
+st.markdown("*Emploi, chômage, revenus du travail - INSEE* https://www.insee.fr/fr/statistiques/7456877?sommaire=7456956")
 
 st.markdown("*Python Data Analysis Library* https://pandas.pydata.org")
 
