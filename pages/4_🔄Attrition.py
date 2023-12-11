@@ -24,6 +24,8 @@ job_titles = {
 
 # Generate a single row of data
 def generate_row(id):
+    genre_weights = [55, 45] # Weights for Homme, Femme
+    genre = choices(["Homme", "Femme"], weights=genre_weights, k=1)[0],
     department = fake.random_element(elements=("HR", "Sales", "Marketing", "IT", "Finance"))
     job_title = fake.random_element(elements=job_titles[department])
     reason_weights = [0.44, 0.20, 0.11, 0.02, 0.14, 0.06, 0.03]  # Weights for Dismissal, Resignation, Conventional termination
@@ -33,7 +35,7 @@ def generate_row(id):
         "ID": id,
         "Last Name": fake.last_name(),
         "First Name": fake.first_name(),
-        "Gender": fake.random_element(elements=("Male", "Female")),
+        "Gender": genre,
         "Age": randint(18, 57),
         "Years of Service": randint(1, 10),
         "Annual Salary (€)": randint(23000, 65000),
