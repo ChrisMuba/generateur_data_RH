@@ -61,7 +61,7 @@ def generate_fake_data(id):
     #education_level = fake.random_element(elements=("BTS", "Licence", "Bachelor", "Master", "Ingenieur"))
 
     education_level_weights = [0.30, 0.23, 0.23, 0.12, 0.12]  # Weights for RH, Ventes, Marketing, etc... 
-    education_level = choices(["BTS", "Licence", "Bachelor", "Master", "Ingenieur"], weights=deducation_level_weights, k=1)[0]
+    education_level = choices(["BTS", "Licence", "Bachelor", "Master", "Ingenieur"], weights=education_level_weights, k=1)[0]
 
     
     salary_ranges = {
