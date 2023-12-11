@@ -45,7 +45,7 @@ def generate_row(id):
         sub_elements = ('Assistant de gestion', 'Analyste financier', 'Auditeur interne',
                         'Comptable', 'Contrôleur de gestion')
     elif service == "Informatique":
-        sub_elements = ('Administrateur système', 'Administrateur réseaux', 'Administrateur Bases de données'
+        sub_elements = ('Administrateur système', 'Administrateur réseaux', 'Administrateur Bases de données',
                         'Responsable cybersécurité', 'Webmaster', 'Data engineer')
     elif service == "R&D":
         sub_elements = ('Chef de projet R&D', 'Ingénieur généraliste', 'Ingénieur tests et essais', 
