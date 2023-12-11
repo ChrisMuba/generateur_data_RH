@@ -16,7 +16,7 @@ def generate_row(emp_id):
     gender_weights = [55, 45] # Weights for Homme, Femme
     gender = choices(["Homme", "Femme"], weights=gender_weights, k=1)[0]
     services_weights = [0.03, 0.05, 0.10, 0.10, 0.15, 0.15, 0.18, 0.24]  # Weights for RH, Ventes, Marketing, etc... 
-    services = choices(["Communication", "RH", "Marketing", "Finance", "Informatique", "R&D", "Ventes", "Services_techniques"], weights=service_weights, k=1)[0]
+    services = choices(["Communication", "RH", "Marketing", "Finance", "Informatique", "R&D", "Ventes", "Services_techniques"], weights=services_weights, k=1)[0]
     gross_monthly_salary = randint(1917, 5417)
     avg_employer_contributions = round(gross_monthly_salary * 0.33, 2)
     monthly_cost = round(gross_monthly_salary + avg_employer_contributions, 2)
