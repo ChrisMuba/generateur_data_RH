@@ -3,7 +3,8 @@ import pandas as pd
 import base64
 from faker import Faker
 from random import choices
-from random import choice
+#from random import choice
+from random import randint, uniform
 
 # Instantiate a faker object
 fake = Faker()
@@ -16,7 +17,8 @@ def generate_row(emp_id):
     num_hours_per_week = choices([35, 32, 28, 24, 17.5, 15], weights=num_hours_per_week_weights, k=1)[0]
     num_paid_hours_per_month = round(num_hours_per_week * 52 / 12, 2)
     fte = round(num_paid_hours_per_month / 151.67, 2)
-    num_months_presence = choice(range(1, 13))
+    #num_months_presence = choice(range(1, 13))
+    num_months_presence = randint(1, 12)
     fte_worked = round(fte * num_months_presence / 12, 2)
 
     return {
