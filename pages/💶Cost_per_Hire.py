@@ -4,36 +4,57 @@ import streamlit as st
 import pandas as pd
 import base64
 from faker import Faker
+from random import choices
 from random import randint, uniform
 
 # Instantiate a faker object
 fake = Faker()
 
-# Department job titles
-job_titles = {
-    "HR": ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale',
-           'Responsable SIRH', 'Responsable GPEC GEPP'),
-    "Sales": ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires',
-              'Gestionnaire CRM', 'Responsable commercial'),
-    "Marketing": ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
-                  'Responsable marketing', 'Ingénieur packaging'),
-    "IT": ('Administrateur système', 'Administrateur réseaux',
-           'Responsable sécurité informatique', 'Webmaster', 'Data engineer'),
-    "Finance": ('Assistant de gestion', 'Analyste financier', 'Auditeur interne',
-                'Comptable', 'Contrôleur de gestion')
-}
-
 # Generate a single row of data
 def generate_row(job_id):
-    department = fake.random_element(elements=("HR", "Sales", "Marketing", "IT", "Finance"))
-    job_title = fake.random_element(elements=job_titles[department])
+    
+    service_weights = [0.03, 0.05, 0.10, 0.10, 0.15, 0.15, 0.18, 0.24]  # Weights for RH, Ventes, Marketing, etc... 
+    service = choices(["Communication", "RH", "Marketing", "Finance", "Informatique", "R&D", "Ventes", "Services_techniques"], weights=service_weights, k=1)[0]
+
+    if service == "Communication":
+        sub_elements = ('Chargé de communication', 'Community manager')
+        
+    elif service == "RH":
+        sub_elements = ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale')
+        
+    elif service == "Marketing":
+        sub_elements = ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
+                        'Ingénieur packaging')
+        
+    elif service == "Finance":
+        sub_elements = ('Assistant de gestion', 'Analyste financier', 'Comptable', 'Contrôleur de gestion')
+        
+    elif service == "Informatique":
+        sub_elements = ('Administrateur système', 'Administrateur réseaux', 'Administrateur Bases de données',
+                        'Responsable cybersécurité', 'Webmaster', 'Data engineer')
+        
+    elif service == "R&D":
+        sub_elements = ('Chef de projet R&D', 'Ingénieur généraliste', 'Ingénieur tests et essais', 
+                        'Statisticien', 'Chargé d\'intelligence économique', 'Ingénieur d\'études environnement')
+        
+    elif service == "Ventes":
+        sub_elements = ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires', 'Animateur des ventes',
+                        'Gestionnaire CRM', 'Responsable commercial', 'Business developer', 'Ingénieur avant-vente')
+        
+    elif service == "Services_techniques":
+        sub_elements = ('Acheteur', 'Chargé de la qualité', 'Contrôleur des coûts', 'Gestionnaire Supply Chain', 
+                        'Responsable Entrepôt', 'Ingénieur planification', 'Ingénieur amélioration continue', 
+                        'Chargé Affaires Réglementaires', 'Responsable matériel', 'Gestionnaire Flux Logistiques')
+    else:
+        sub_elements = ()
+    
     num_vacancies = randint(2, 20)
     num_hires = randint(0, num_vacancies)  # Number of Hires should be less than or equal to Number of Vacancies
     
     return {
         "Job_ID": job_id,
-        "Department": department,
-        "Job Title": job_title,
+        "Department": service,
+        "Job Title": fake.random_element(elements=sub_elements),
         "Number of Vacancies": num_vacancies,
         "Location": fake.city(),
         "Number of Applicants": randint(75, 300),
