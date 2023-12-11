@@ -27,7 +27,9 @@ benefits_values = {
 def generate_fake_data(id):
     department = fake.random_element(elements=("HR", "Sales", "Marketing", "IT", "Finance"))
     job_title = fake.random_element(elements=job_titles[department])
-    gender = fake.random_element(elements=("Male", "Female"))
+    #gender = fake.random_element(elements=("Male", "Female"))
+    gender_weights = [55, 45] # Weights for Homme, Femme
+    gender = choices(["Homme", "Femme"], weights=gender_weights, k=1)[0]
     age = randint(28, 52)
     years_at_company = randint(1, 12)
     education_level = fake.random_element(elements=("BTS", "Licence", "Bachelor", "Master", "Ingenieur"))
