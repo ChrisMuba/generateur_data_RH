@@ -18,7 +18,7 @@ def generate_row(id):
     gender_weights = [55, 45] # Weights for Homme, Femme
     gender = choices(["Homme", "Femme"], weights=gender_weights, k=1)[0]
     start_date = datetime(2023, 1, 1)
-    end_date = datetime(2023, 9, 31)
+    end_date = datetime(2023, 12, 31)
     recruitment_date = random_date(start_date, end_date)
     leaving_date = random_date(recruitment_date, recruitment_date + timedelta(days=30 * 3))  # Assuming a max of 6 months after recruitment
     reason_weights = [0.44, 0.20, 0.11, 0.02, 0.14, 0.06, 0.03]  # Weights for Dismissal, Resignation, Conventional termination
