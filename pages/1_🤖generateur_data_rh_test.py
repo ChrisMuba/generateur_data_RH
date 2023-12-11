@@ -51,11 +51,11 @@ def generate_row(id):
         sub_elements = ('Administrateur système', 'Administrateur réseaux',
                         'Responsable cybersécurité', 'Webmaster', 'Data engineer')
     elif service == "Ventes":
-        sub_elements = ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires',
-                        'Gestionnaire CRM', 'Responsable commercial')
+        sub_elements = ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires', 'Animateur des ventes',
+                        'Gestionnaire CRM', 'Responsable commercial', 'Business developer', 'Ingénieur avant-vente')
     elif service == "Services_techniques":
-        sub_elements = ('Acheteur', 'Chargé de la qualité', 'Contrôleur des coûts',
-                        'Gestionnaire Supply Chain', 'Responsable Entrepôt', 'Ingénieur planification', 'Ingénieur amélioration continue', 
+        sub_elements = ('Acheteur', 'Chargé de la qualité', 'Contrôleur des coûts', 'Gestionnaire Supply Chain', 
+                        'Responsable Entrepôt', 'Ingénieur planification', 'Ingénieur amélioration continue', 
                         'Chargé Affaires Réglementaires', 'Responsable matériel', 'Gestionnaire Flux Logistiques')
     else:
         sub_elements = ()
