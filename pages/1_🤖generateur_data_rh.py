@@ -60,7 +60,11 @@ def generate_row(id):
     else:
         sub_elements = ()
     
-    diplome = fake.random_element(elements=("BTS", "Licence", "Bachelor", "Master", "Ingenieur"))
+    #diplome = fake.random_element(elements=("BTS", "Licence", "Bachelor", "Master", "Ingenieur"))
+
+    diplome_weights = [0.30, 0.23, 0.23, 0.12, 0.12]  # Weights for RH, Ventes, Marketing, etc... 
+    #service = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
+    diplome = choices(["BTS", "Licence", "Bachelor", "Master", "Ingenieur"], weights=diplome_weights, k=1)[0]
     
     if diplome == "BTS":
         min_salary = 23000
