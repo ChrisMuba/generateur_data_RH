@@ -27,24 +27,35 @@ def generate_row(id):
     leaving_date = random_date(recruitment_date, datetime.now())
     reason_weights = [0.44, 0.20, 0.11, 0.02, 0.14, 0.06, 0.03]  # Weights for Dismissal, Resignation, Conventional termination
     reason_for_departure = choices(["Démission", "Fin_Période_Essai", "Rupture_conventionnelle", "Licenciement_économique", "Licenciement", "Retraite", "Autres"], weights=reason_weights, k=1)[0]
-    
-    service = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
-    
-    if service == "RH":
+
+    service_weights = [0.03, 0.05, 0.10, 0.10, 0.15, 0.15, 0.18, 0.24]  # Weights for RH, Ventes, Marketing, etc... 
+    #service = fake.random_element(elements=("RH", "Ventes", "Marketing", "Informatique", "Finance"))
+    service = choices(["Communication", "RH", "Marketing", "Finance", "Informatique", "R&D", "Ventes", "Services_techniques"], weights=service_weights, k=1)[0]
+
+    if service == "Communication":
         sub_elements = ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale',
                         'Responsable SIRH', 'Responsable GPEC GEPP')
-    elif service == "Ventes":
-        sub_elements = ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires',
-                        'Gestionnaire CRM', 'Responsable commercial')
+    elif service == "RH":
+        sub_elements = ('Assistant RH', 'Gestionnaire paie', 'Contrôleur de gestion sociale',
+                        'Responsable SIRH', 'Responsable GPEC GEPP')
     elif service == "Marketing":
         sub_elements = ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
                         'Responsable marketing', 'Ingénieur packaging')
-    elif service == "Informatique":
-        sub_elements = ('Administrateur système', 'Administrateur réseaux',
-                        'Responsable cybersécurité', 'Webmaster', 'Data engineer')
     elif service == "Finance":
         sub_elements = ('Assistant de gestion', 'Analyste financier', 'Auditeur interne',
                         'Comptable', 'Contrôleur de gestion')
+    elif service == "Informatique":
+        sub_elements = ('Administrateur système', 'Administrateur réseaux',
+                        'Responsable cybersécurité', 'Webmaster', 'Data engineer')
+    elif service == "R&D":
+        sub_elements = ('Administrateur système', 'Administrateur réseaux',
+                        'Responsable cybersécurité', 'Webmaster', 'Data engineer')
+    elif service == "Ventes":
+        sub_elements = ('Animateur SAV', 'Assistant commercial', 'Chargé d’affaires',
+                        'Gestionnaire CRM', 'Responsable commercial')
+    elif service == "Services_techniques":
+        sub_elements = ('Assistant marketing', 'Category manager', 'Chef de projet marketing',
+                        'Responsable marketing', 'Ingénieur packaging')
     else:
         sub_elements = ()
     
