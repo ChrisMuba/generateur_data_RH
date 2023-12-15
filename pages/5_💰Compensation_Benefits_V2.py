@@ -79,16 +79,16 @@ def generate_fake_data(id):
     return {
         "ID": id,
         "Department": service,
-        "Job Title": fake.random_element(elements=sub_elements),
+        "Job_Title": fake.random_element(elements=sub_elements),
         "Gender": gender,
         "Age": age,
-        "Years at Company": years_at_company,
-        "Education Level": education_level,
+        "Years_at_Company": years_at_company,
+        "Education_Level": education_level,
         "Salary": salary,
-        "Bonus %": f"{bonus_percent}%",
-        "Bonus Value": bonus_value,
-        "Benefits Package": benefits_package,
-        "Benefits Package Value": benefits_package_value
+        "Bonus_%": f"{bonus_percent}%",
+        "Bonus_Value": bonus_value,
+        "Benefits_Package": benefits_package,
+        "Benefits_Package_Value": benefits_package_value
     }
 
 # Streamlit app
